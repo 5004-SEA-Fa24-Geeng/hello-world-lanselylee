@@ -39,6 +39,8 @@ classDiagram
 
 ### Program Flow
 Write a short paragraph detailing the flow of the program in your own words. This is to help you understand / trace the code (and give you practice of something called a code walk that will be required in this course).
+
+
 So this program starts at the main() method of AlohaWorld. It first call the “ ConsoleView.getName()” to hint the user to input the name, and then store this name to variable “name”.
 
 Then, the program call ConsoleView.getlocality(), to tell user choose a location from given locations.The number selected by the user is stored in the variable locality.
