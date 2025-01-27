@@ -39,6 +39,17 @@ classDiagram
 
 ### Program Flow
 Write a short paragraph detailing the flow of the program in your own words. This is to help you understand / trace the code (and give you practice of something called a code walk that will be required in this course).
+So this program starts at the main() method of AlohaWorld. It first call the “ ConsoleView.getName()” to hint the user to input the name, and then store this name to variable “name”.
+
+Then, the program call ConsoleView.getlocality(), to tell user choose a location from given locations.The number selected by the user is stored in the variable locality.
+
+Then, we create an instance of the Greeter class using the user's name and selected location. And the Greeter class will  create a dynamic greeting based on the user's name and location.
+
+The program generate the greeting by calling “Greeter.greet()”method, and this greeting will change based on the user's location. Also the greeting can be outputted through “ConsoleView.printGreeting()”.
+
+The program enters a loop and calls ConsoleView.checkRunAgain() to prompt the user whether to continue running the program. The user enters yes or no to decide whether to run again. If user choose to continue, the program will call the “ConsoleView.getLocatlity()” again to get a new location and  update the locality of the Greeter instance. Then the program will generate new greeting.
+
+When user chooses to exit, the loop will ends, the program ends.
 
 
 ## Assignment Questions
