@@ -31,6 +31,8 @@ classDiagram
 
     class ConsoleView {
     }
+    
+<img width="852" alt="截屏2025-01-27 00 31 12" src="https://github.com/user-attachments/assets/9e11501b-c8de-45da-a7f6-b17df8f6f66e" />
 
 
 
