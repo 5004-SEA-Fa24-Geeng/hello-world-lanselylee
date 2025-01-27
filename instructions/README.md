@@ -116,25 +116,30 @@ Using the javadoc, and your understanding of the code, create a UML diagram for 
 
 To help you out, here is the starting UML diagram for the Aloha World application. You will need to add in the internals of each class. In your UML, you should include the private functions and variables as well using the `-` symbol before them. 
 
-```mermaid
+```mermaid 
+```
 ---
 title: Aloha World UML
 ---
 classDiagram
-    direction LR
-    AlohaWorld --> Greeter 
-    AlohaWorld --> ConsoleView : uses
-    ConsoleView --> Greeter : uses
+direction LR
+AlohaWorld --> Greeter
+AlohaWorld --> ConsoleView : uses
+ConsoleView --> Greeter : uses
+
     class AlohaWorld {
-        
+        + main(String[] args): void
     }
+    
     class Greeter {
-        
+        - name : String
+        - locality : int
+        + Greeter(String name)
+        + getName(): String
     }
+
     class ConsoleView {
-        
     }
-```
 
 > [!NOTE] 
 > In the above diagram, we introduce an additional notation from your module video - `uses`. It is used to show that one class uses another class but doesn't create the object. So if you look at the diagram, you can see that `AlohaWorld` uses  `ConsoleView` by calling the static methods. However, AlohaWorld has the line ` Greeter greeter = new Greeter(name, locality);` which create a new Greeter object. As such, it is the *has a* relationship, as AlohaWorld has a Greeter (the default when the arrow goes that way).
