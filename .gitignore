@@ -34,3 +34,5 @@ bin
 # ide directories
 .idea
 .vscode
+
+*.DS_Store

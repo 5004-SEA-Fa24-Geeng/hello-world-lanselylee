@@ -48,13 +48,13 @@ public class Greeting {
 
     // Getter for formatStr (default to Unicode greeting)
     public String getFormatStr() {
-        return String.format(formatStr, "%s", unicodeGreeting);
+        return String.format(formatStr, unicodeGreeting, "%s");
     }
 
     // Getter for formatStr with option to use ASCII greeting
     public String getFormatStr(boolean useAscii) {
         String greeting = useAscii ? asciiGreeting : unicodeGreeting;
-        return String.format(formatStr, "%s", greeting);
+        return String.format(formatStr, greeting, "%s");
     }
 
     // toString method for debugging and testing
