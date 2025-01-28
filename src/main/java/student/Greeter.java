@@ -73,7 +73,7 @@ public class Greeter {
      * @return the name of the greeter
      */
     public String getName() {
-        return name
+        return name;
     }
 
     /**
@@ -85,6 +85,7 @@ public class Greeter {
      * @return the int value of the locality
      */
     public int getLocality() {
+
         return locality;
     }
 
@@ -102,10 +103,12 @@ public class Greeter {
     public void setLocality(int locality) {
         if (locality < 1 || locality > localityList.size()) {
             throw new IllegalArgumentException(
-                    String.format("Locality must be between 1 and %d", localityList.size()));
+                    String.format("Locality must be between 1 and %d", localityList.size())
+            );
         }
         this.locality = locality;
     }
+
 
     /**
      * This method is used to greet the user. It will return a greeting based on their set locality.
@@ -189,7 +192,7 @@ public class Greeter {
      * @return the locality as a string
      */
     private String getLocalityString() {
-        if (locality < 1 || locality >= localityList.size()) {
+        if (locality < 1 || locality > localityList.size()) {
             return "USA";
         }
         return localityList.get(locality);
@@ -256,8 +259,9 @@ public class Greeter {
      */
     @Override
     public String toString() {
-        return String.format("{name:\"%s\", locality:\"%s\"}", name, getLocalityString());
+        return String.format("{name:\"%s\", locality:\"%s\"}", name, localityList.get(locality - 1));
     }
+
 
 
     /**
