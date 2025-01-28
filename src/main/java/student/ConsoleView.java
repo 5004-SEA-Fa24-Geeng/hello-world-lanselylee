@@ -18,7 +18,7 @@ public final class ConsoleView {
     // application to
     // prevent conflicts.
     /** scanner pointing towards System.in. */
-    private static final Scanner SCANNER = new Scanner(System); // System.in is a standard input
+    private static final Scanner SCANNER = new Scanner(System.in); // System.in is a standard input
                                                                 // stream, it is used to read
                                                                 // data from the keyboard.
     /** Stores the locality lists from Greeter to prevent additional copies. */
@@ -57,27 +57,26 @@ public final class ConsoleView {
      * @return the locality selected by the client
      */
     public static int getLocality() {
-        System.out.println("Select a locality: ");
-        for (int i = 0; i < LOCALITY_OPTIONS.size(); i++) {
-            System.out.println("\t" + (i + 1) + ". " + LOCALITY_OPTIONS.get(i));
-        }
-        System.out.print("> ");
-        String input = SCANNER.nextLine().trim();
-        try {
-            int val = Integer.parseInt(input); // converts the input to an integer, similar to
-                                               // int(value) in python, but only goes from strings
-                                               // to integers.
-            if (val > 0 && val <= LOCALITY_OPTIONS.size()) {
-                return val;
-            } else {
-                System.out.println("Invalid input, please try again.");
-                return getLocality();
+        while (true) {
+            System.out.println("Select a locality: ");
+            for (int i = 0; i < LOCALITY_OPTIONS.size(); i++) {
+                System.out.println("\t" + (i + 1) + ". " + LOCALITY_OPTIONS.get(i));
             }
-        } catch (NumberFormatException e) {
-            System.out.println("Invalid input, please try again., Numbers only.");
-            return getLocality();
+            System.out.print("> ");
+            String input = SCANNER.nextLine().trim();
+            try {
+                int val = Integer.parseInt(input);
+                if (val > 0 && val <= LOCALITY_OPTIONS.size()) {
+                    return val;
+                } else {
+                    System.out.println("Invalid input, please try again.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input, numbers only. Please try again.");
+            }
         }
     }
+
 
     /**
      * Asks the client if they would like to be greeted again.
@@ -88,19 +87,19 @@ public final class ConsoleView {
      * @return true if they want to be greeted again, false if they don't.
      */
     public static boolean checkRunAgain() {
-        System.out.print("Would you like be greeted again (yes/no)? ");
-        String input = SCANNER.nextLine().toLowerCase(); // converts the input to lowercase
-        if (input.equals("yes") || input.equals("y")) {
-            return true;
-        } else if (input.equals("no") || input.equals("n")) { // || is the 'or' operator in many
-                                                              // languages, && is the 'and' operator
-            return false;
-        } else {
-            System.out.println("Invalid answer, please try again.");
-            return checkRunAgain();
+        while (true) {
+            System.out.print("Would you like to be greeted again (yes/no)? ");
+            String input = SCANNER.nextLine().trim().toLowerCase();
+            if (input.equals("yes") || input.equals("y")) {
+                return true;
+            } else if (input.equals("no") || input.equals("n")) {
+                return false;
+            } else {
+                System.out.println("Invalid answer, please try again.");
+            }
         }
-
     }
+
 
     /**
      * Currently acts as a pass through to System.out.println.
