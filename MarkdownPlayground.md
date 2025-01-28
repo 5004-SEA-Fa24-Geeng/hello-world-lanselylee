@@ -4,6 +4,12 @@ Use this file to add example markdown elements you learned about by reading the 
 
 Mermaid is a markdown language that allows you to create diagrams. You can find more information about mermaid in the resources below. It has become popular enough that github has included it as an option in their markdown.  For built in markdown readers, such as the one built into IntelliJ or VSCode, you may need to install a plugin to render the mermaid diagrams. 
 
+Headings：Markdown supports six levels of headings, from # to ######. 
+Lists：nordered lists and ordered list.
+Blockquotes:Markdown is a lightweight markup language for creating formatted text using a plain-text editor. 
+
+<img width="831" alt="截屏2025-01-27 20 17 13" src="https://github.com/user-attachments/assets/0a24cafd-5ee8-4882-aa86-530728cd5646" />
+
 > [!NOTE]
 > [IntelliJ Mermaid Plugin](https://plugins.jetbrains.com/plugin/20146-mermaid). Also for intelliJ, this is often installed by default, but incase it isn't [Markdown Plugin IntelliJ](https://plugins.jetbrains.com/plugin/7793-markdown). 
 
